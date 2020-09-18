@@ -5,6 +5,8 @@ WORKDIR /usr/src/app
 
 COPY . .
 
+RUN rm -rf dist
+
 # copiar o projeto e instalar os pacotes com o npm
 RUN yarn install
 
