@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    container_name: api
+    restart: always
+    volumes:
+      - api-logs:/usr/src/node-api/logs:rw
+      - .:/usr/src/app
+    environment:
+      - NODE_ENV=development
+    network_mode: bridge
+    external_links:
+      - mysql:5.7.22
+volumes:
+  api-logs:
