@@ -11,7 +11,7 @@ import { UserDto } from './dto/user.dto';
 
 @Index("users_uuid_unique", ["uuid"], { unique: true })
 @Index("users_email_unique", ["email"], { unique: true })
-@Entity("users", { schema: process.env.DB_SCHEMA })
+@Entity("users")
 export class User {
   @PrimaryGeneratedColumn({ type: "int", name: "id", unsigned: true })
   id: number;
